@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560" role="img" aria-labelledby="t d" font-family="Raleway, 'Helvetica Neue', Arial, sans-serif">
+  <title id="t">Arquitectura de alto nivel</title>
+  <desc id="d">Las personas entran por HTTPS a un balanceador con cortafuegos de aplicaciones y CDN. Detrás hay tres servicios en contenedores (aula, worker y pdf) más la identidad con Keycloak y el almacenamiento de contenidos. El aula usa un core común en proceso y guarda en Firestore. El worker consume una cola de eventos, envía correos, genera certificados con el servicio pdf y alimenta el cuadro de mando. Todo dentro de la Unión Europea, una instalación por institución.</desc>
+  <style>
+    .fondo{fill:#ffffff}
+    .ue{fill:none;stroke:#6E8157;stroke-width:2;stroke-dasharray:8 6}
+    .caja{fill:#f7f3f2;stroke:#5F322F;stroke-width:1.5}
+    .borde{fill:#5F322F}
+    .t{fill:#2b1715;font-size:15px;font-weight:700}
+    .s{fill:#4a3b39;font-size:12px}
+    .eti{fill:#566E30;font-size:13px;font-weight:700}
+    .lin{stroke:#5F322F;stroke-width:1.5;fill:none;marker-end:url(#f)}
+    .punta{fill:#5F322F}
+    @media (prefers-color-scheme: dark){
+      .fondo{fill:#0d1117}
+      .caja{fill:#1f1715;stroke:#c99a95}
+      .borde{fill:#c99a95}
+      .t{fill:#f2e9e8}
+      .s{fill:#cdbfbd}
+      .eti{fill:#a9bf8c}
+      .ue{stroke:#a9bf8c}
+      .lin{stroke:#c99a95}
+      .punta{fill:#c99a95}
+    }
+  </style>
+  <defs><marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="punta" d="M0 0L10 5L0 10z"/></marker></defs>
+  <rect class="fondo" width="900" height="560"/>
+
+  <!-- Personas -->
+  <rect class="caja" x="300" y="16" width="300" height="48" rx="8"/>
+  <text class="t" x="450" y="38" text-anchor="middle">Alumnado, docentes y gestión</text>
+  <text class="s" x="450" y="55" text-anchor="middle">navegador · móvil desde 320 px</text>
+
+  <!-- Frontera UE -->
+  <rect class="ue" x="16" y="84" width="868" height="460" rx="14"/>
+  <text class="eti" x="32" y="106">Unión Europea · una instalación aislada por institución</text>
+
+  <path class="lin" d="M450 64V122"/>
+
+  <!-- Entrada -->
+  <rect class="caja" x="200" y="124" width="500" height="48" rx="8"/>
+  <text class="t" x="450" y="146" text-anchor="middle">Entrada HTTPS</text>
+  <text class="s" x="450" y="163" text-anchor="middle">balanceador · cortafuegos de aplicaciones · CDN · CSP estricta</text>
+
+  <path class="lin" d="M300 172V214"/>
+  <path class="lin" d="M450 172V214"/>
+  <path class="lin" d="M680 172V214"/>
+
+  <!-- Fila de servicios -->
+  <rect class="caja" x="40" y="216" width="330" height="96" rx="8"/>
+  <rect class="borde" x="40" y="216" width="6" height="96" rx="3"/>
+  <text class="t" x="60" y="240">aula</text>
+  <text class="s" x="60" y="260">HTML generado en servidor, GOV.UK Frontend</text>
+  <text class="s" x="60" y="277">catálogo · aula · cuestionarios · foros</text>
+  <text class="s" x="60" y="294">panel de gestión</text>
+
+  <rect class="caja" x="390" y="216" width="200" height="96" rx="8"/>
+  <text class="t" x="410" y="240">identidad</text>
+  <text class="s" x="410" y="260">Keycloak · doble factor</text>
+  <text class="s" x="410" y="277">directorio de la institución</text>
+
+  <rect class="caja" x="610" y="216" width="250" height="96" rx="8"/>
+  <text class="t" x="630" y="240">contenidos</text>
+  <text class="s" x="630" y="260">vídeo, PDF y SCORM</text>
+  <text class="s" x="630" y="277">almacenamiento + CDN,</text>
+  <text class="s" x="630" y="294">origen aparte</text>
+
+  <path class="lin" d="M370 250H388"/>
+
+  <!-- Core -->
+  <path class="lin" d="M205 312V348"/>
+  <rect class="caja" x="40" y="350" width="330" height="70" rx="8"/>
+  <text class="t" x="60" y="374">core común (paquete dentro del aula)</text>
+  <text class="s" x="60" y="394">expediente con auditoría · matrícula</text>
+  <text class="s" x="60" y="410">roles con ámbito y vigencia · evidencias</text>
+
+  <path class="lin" d="M205 420V456"/>
+  <rect class="caja" x="40" y="458" width="330" height="66" rx="8"/>
+  <text class="t" x="60" y="482">Firestore</text>
+  <text class="s" x="60" y="501">datos en la UE · copias en otra región UE</text>
+  <text class="s" x="60" y="516">identificadores opacos y aleatorios</text>
+
+  <!-- Worker -->
+  <path class="lin" d="M370 385H478"/>
+  <text class="s" x="384" y="377">cola de eventos</text>
+  <rect class="caja" x="480" y="350" width="200" height="90" rx="8"/>
+  <text class="t" x="500" y="374">worker</text>
+  <text class="s" x="500" y="394">reintentos idempotentes</text>
+  <text class="s" x="500" y="410">correo transaccional</text>
+  <text class="s" x="500" y="426">tareas programadas</text>
+
+  <path class="lin" d="M680 375H718"/>
+  <rect class="caja" x="720" y="350" width="140" height="62" rx="8"/>
+  <text class="t" x="740" y="374">pdf</text>
+  <text class="s" x="740" y="394">certificados con QR</text>
+
+  <path class="lin" d="M580 440V456"/>
+  <rect class="caja" x="480" y="458" width="380" height="66" rx="8"/>
+  <text class="t" x="500" y="482">cuadro de mando</text>
+  <text class="s" x="500" y="501">analítica propia, sin terceros</text>
+  <text class="s" x="500" y="516">los datos de prueba no cuentan</text>
+</svg>
